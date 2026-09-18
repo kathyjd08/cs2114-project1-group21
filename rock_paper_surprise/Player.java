@@ -1,10 +1,100 @@
 package rock_paper_surprise;
+import java.util.*;
+/**
+ * // -------------------------------------------------------------------------
+/**
+ *  Player class 
+ * 
+ *  @author Anna Kinney (annak06)
+ *  @version Sep 18, 2026
+ */
 public class Player
 {
     //~ Fields ................................................................
-
+    private String username;
+    private int lives;
+    private int score;
+    private Player player;
     //~ Constructors ..........................................................
 
+    /**
+     * Player class constructor
+     * @param username
+     */
+    public Player(String username) 
+    {   
+        Score s = new Score();
+        ArrayList<Player> players = s.players;
+        for (int i = 0; i < players.size(); i++)
+        {
+            if (username.equals(players.get(i).getUsername()) && players.get(i).getLives() != 0)
+            {
+                player = players.get(i);
+            }
+            else
+            {
+                lives = 3;
+                score = 0;
+            }
+        }
+        
+        
+        
+    }
+    
     //~Public  Methods ........................................................
-
+    
+    /**
+     * gets the username of the player
+     * @return username
+     */
+    public String getUsername()
+    {
+        return username;
+    }
+    
+    /**
+     * updates the lives for the player
+     * @param lives
+     */
+    public void setLives(int lives)
+    {
+        this.lives = lives;
+    }
+    
+    /**
+     * gets the lives of the player
+     * @return score
+     */
+    public int getLives()
+    {
+        return lives;
+    }
+    
+    /**
+     * updates the score of the player
+     * @param score
+     */
+    public void setScore(int score)
+    {
+        this.score = score;
+    }
+    
+    /**
+     * gets the score of the player
+     * @return score
+     */
+    public int getScore()
+    {
+        return score;
+    }
+    
+    /**
+     * highscore string
+     * @returns string of username and score
+     */
+    public String toString()
+    {
+        return username + "'s " + "Highscore: " + score;
+    }
 }
