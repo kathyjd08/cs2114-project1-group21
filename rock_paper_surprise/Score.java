@@ -1,6 +1,8 @@
 package rock_paper_surprise;
 
 import java.util.*;
+import java.io.*;
+
 
 /**
  * This class reads and writes the save file of scores and keeps track of player

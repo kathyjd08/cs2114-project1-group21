@@ -1,6 +1,6 @@
 package rock_paper_surprise;
 
-
+import java.io.*;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
