@@ -29,7 +29,9 @@ public class Player
     {
         Score s = new Score();
         ArrayList<Player> players = s.players;
-
+        this.username = username;
+        this.lives = 3;
+        this.score = 0;
         for (int i = 0; i < players.size(); i++)
         {
             if (username.equals(players.get(i).getUsername())
@@ -37,11 +39,6 @@ public class Player
             {
                 player = players.get(i);
                 players.remove(i);
-            }
-            else {
-                this.username = username;
-                this.lives = 3;
-                this.score = 0;
             }
         }
 
