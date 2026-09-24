@@ -13,7 +13,7 @@ import java.io.*;
 public class Score
 {
     // ~ Fields ................................................................
-    public ArrayList<Player> players;
+    public ArrayList<Player> players = new ArrayList<>();
     private String user;
     private int score;
     private int lives;
