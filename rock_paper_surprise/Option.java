@@ -26,6 +26,8 @@ public class Option
      */
     public Option(String name, String type)
     {
+   //Why do we need types for options? I know we have power up but maybe the string could just include like a carat (^) :)
+
         this.name = name;
         this.type = type;
     }

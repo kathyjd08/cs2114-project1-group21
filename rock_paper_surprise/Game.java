@@ -68,6 +68,7 @@ public class Game
         System.out.print(
             "Enter option (choose from rock, paper, scissors, //surprises): ");
         String playerInput = sc.next();
+        //Why do we need types for options? I know we have power up but maybe the string could just include like a carat (^) :)
         Option playerOp = new Option(playerInput);
         Option compOp = game.getResponse();
         int result = playerOp.fight(compOp);
