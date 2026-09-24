@@ -27,10 +27,6 @@ public class Player
      */
     public Player(String username)
     {
-        this.username = username;
-        this.lives = 3;
-        this.score = 0;
-
         Score s = new Score();
         ArrayList<Player> players = s.players;
 
@@ -41,6 +37,11 @@ public class Player
             {
                 player = players.get(i);
                 players.remove(i);
+            }
+            else {
+                this.username = username;
+                this.lives = 3;
+                this.score = 0;
             }
         }
 
