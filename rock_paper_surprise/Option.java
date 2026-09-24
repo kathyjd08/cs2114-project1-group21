@@ -13,7 +13,6 @@ public class Option
 {
     // ~ Fields ................................................................
     private String name;
-    private String type;
     // ~ Constructors ..........................................................
 
     /**
@@ -24,12 +23,10 @@ public class Option
      * @param type
      *            of option
      */
-    public Option(String name, String type)
+    public Option(String name)
     {
-   //Why do we need types for options? I know we have power up but maybe the string could just include like a carat (^) :)
 
         this.name = name;
-        this.type = type;
     }
 
     // ~Public Methods ........................................................
@@ -46,15 +43,7 @@ public class Option
     }
 
 
-    /**
-     * getter for option type
-     * 
-     * @return type of option
-     */
-    public String getType()
-    {
-        return type;
-    }
+  
 
 
     // ----------------------------------------------------------

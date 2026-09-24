@@ -28,7 +28,7 @@ public class PlayerTest
     @Before
     public void setUp()
     {
-        Player player = new Player("claire");
+        player = new Player("claire");
     }
     //~Public  Methods ........................................................
     /**

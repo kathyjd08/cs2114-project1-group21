@@ -27,28 +27,19 @@ public class OptionTest
     @Test 
     public void testGetName() 
     { 
-        Option rock = new Option("rock", "normal"); 
+        Option rock = new Option("rock"); 
         assertEquals("rock", rock.getName()); 
     }
     
-    /**
-     * tests the getType method
-     */
-    @Test
-    public void testGetType()
-    {
-        Option rock = new Option("rock", "normal"); 
-        assertEquals("nomral", rock.getType());
-    }
-    
+       
     /**
      * tests rock wins against scissors
      */
     @Test
     public void testFightRockWins()
     {
-        Option rock = new Option("rock", "normal");
-        Option scissors = new Option("scissors", "normal");
+        Option rock = new Option("rock");
+        Option scissors = new Option("scissors");
        
         assertEquals(1, rock.fight(scissors));
     }
@@ -59,8 +50,8 @@ public class OptionTest
     @Test
     public void testFightRockLoses()
     {
-        Option rock = new Option("rock", "normal");
-        Option paper = new Option("paper", "norma");
+        Option rock = new Option("rock");
+        Option paper = new Option("paper");
         
         assertEquals(-1, rock.fight(paper));
     }
@@ -71,8 +62,8 @@ public class OptionTest
     @Test
     public void testFightTie()
     {
-        Option rock = new Option("rock", "normal");
-        Option rocky = new Option("rock", "normal");
+        Option rock = new Option("rock");
+        Option rocky = new Option("rock");
         
         assertEquals(0, rock.fight(rocky));
     }
@@ -83,8 +74,8 @@ public class OptionTest
     @Test
     public void testFightInvalidOption()
     {
-        Option rock = new Option("rock", "normal");
-        Option invalid = new Option("banana", "normal");
+        Option rock = new Option("rock");
+        Option invalid = new Option("banana");
         
         assertEquals(-1, rock.fight(invalid));
     }
