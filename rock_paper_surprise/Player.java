@@ -19,22 +19,23 @@ public class Player
 
     /**
      * Player class constructor
-     * @param username
+     * @param username username of the player
      */
     public Player(String username) 
     {   
+        this.username = username;
+        this.lives = 3;
+        this.score = 0;
+        
         Score s = new Score();
         ArrayList<Player> players = s.players;
+        
         for (int i = 0; i < players.size(); i++)
         {
-            if (username.equals(players.get(i).getUsername()) && players.get(i).getLives() != 0)
+            if (username.equals(players.get(i).getUsername()) 
+                && players.get(i).getLives() != 0)
             {
                 player = players.get(i);
-            }
-            else
-            {
-                lives = 3;
-                score = 0;
             }
         }
         
