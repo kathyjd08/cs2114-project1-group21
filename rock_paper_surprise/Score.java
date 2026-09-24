@@ -33,15 +33,51 @@ public class Score
                 int score = Integer.parseInt(records[2]);
                 Player temp = new Player(records[0], lives, score);
                 players.add(temp);
+                line = reader.readLine();
             }
             reader.close();
         }
-        catch (FileNotFoundException e)
+        catch (Exception e)
         {
             e.printStackTrace();
         }
     }
 
+
+    public ArrayList<Player> getTopThree()
+    {
+        ArrayList<Player> sorted = new ArrayList<Player>(players);
+
+        sorted.sort((p1, p2) -> Integer.compare(p2.getScore(), p1.getScore()));
+        ArrayList<Player> temp = new ArrayList<>();
+        temp.add(sorted.get(0));
+        temp.add(sorted.get(1));
+        temp.add(sorted.get(2));
+        return temp;
+    }
+
+
+    public void save()
+    {
+        playerRecords = new File("playerRecords.txt");
+        try
+        {
+            BufferedWriter writer =
+                new BufferedWriter(new FileWriter(playerRecords));
+            for (int i = 0; i < players.size(); i++)
+            {
+                String user = (players.get(i)).getUsername();
+                int l = (players.get(i)).getLives();
+                int s = (players.get(i)).getScore();
+                writer.write(user + "," + l + "," + s + "\n");
+            }
+            writer.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
     /*
      * To Do: - save file method to make and update the file - methods to create
      * the arraylist of players - method to grab game results - get scoreboard

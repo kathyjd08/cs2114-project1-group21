@@ -1,60 +1,70 @@
 package rock_paper_surprise;
+
 import java.io.*;
 
 /**
  * // -------------------------------------------------------------------------
-/**
- *  Option class
+ * /** Option class
  * 
- *  @author Anna Kinney (annak06)
- *  @version Sep 23, 2026
+ * @author Anna Kinney (annak06)
+ * @version Sep 23, 2026
  */
 public class Option
 {
-    //~ Fields ................................................................
+    // ~ Fields ................................................................
     private String name;
     private String type;
-    //~ Constructors ..........................................................
-    
+    // ~ Constructors ..........................................................
+
     /**
-     * option class constructor 
-     * types ex. normal or surprise
-     * @param name of option
-     * @param type of option
+     * option class constructor types ex. normal or surprise
+     * 
+     * @param name
+     *            of option
+     * @param type
+     *            of option
      */
     public Option(String name, String type)
     {
         this.name = name;
         this.type = type;
     }
-    
-    //~Public  Methods ........................................................
- 
+
+    // ~Public Methods ........................................................
+
+
     /**
      * getter for option name
+     * 
      * @return name of option
      */
     public String getName()
     {
         return name;
     }
+
+
     /**
      * getter for option type
+     * 
      * @return type of option
      */
     public String getType()
     {
         return type;
     }
-    
+
+
     // ----------------------------------------------------------
     /**
      * fight method, determines if player wins or loses
+     * 
      * @param pc
-     * @return integer for the score 
+     * @return integer for the score
      */
     public int fight(Option pc)
     {
+        Score score = new Score();
         if (this.name.equals("rock") && pc.getName().equals("scissors"))
         {
             return 1;
@@ -71,11 +81,13 @@ public class Option
         {
             return 0;
         }
+        else if (name.equals("save")) {
+            return 2;
+        }
         else
         {
             return -1;
         }
     }
-    
-    
+
 }
