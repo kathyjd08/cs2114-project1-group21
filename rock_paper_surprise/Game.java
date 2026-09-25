@@ -39,16 +39,16 @@ public class Game {
     public Option getResponse() {
         double rand = Math.random(); // Random double from [0, 1)
         if (rand < rockProb) {
-            return new Option("Rock");
+            return new Option("rock");
         }
         else if (rand < (rockProb + paperProb)) {
-            return new Option("Paper");
+            return new Option("paper");
         }
         else if (rand < (rockProb + paperProb + scissorsProb)) {
-            return new Option("Scissors");
+            return new Option("scissors");
         }
         else {
-            return new Option("Surprise");
+            return new Option("surprise");
         }
     }
 
@@ -66,7 +66,7 @@ public class Game {
         while (player == null) {
             try {
                 player = new Player(username);
-            }
+                }
             catch (IllegalArgumentException e) {
                 System.out.println("Please enter a valid username: ");
                 username = sc.nextLine();
@@ -78,8 +78,9 @@ public class Game {
             System.out.println("You have " + player.getLives() + " lives");
 
             System.out.print(
-                "Enter option (choose from rock, paper, scissors, surprise, or save): ");
-            String playerInput = sc.next();
+                "Enter option (choose from rock, paper, scissors," 
+                    + "surprise, or save): ");
+            String playerInput = sc.next().toLowerCase();
             Option playerOp = new Option(playerInput);
             Option compOp = game.getResponse();
             int result = playerOp.fight(compOp);
@@ -95,12 +96,22 @@ public class Game {
                 System.out.println("You may now close the game!");
                 score.players.add(player);
                 score.save();
+                break;
             }
             else {
                 System.out.println("You lost :(");
                 player.setLives(player.getLives() - 1);
             }
         }
-        System.out.println("You are out of lives!");
+        
+        if (player.getLives() == 0)
+        {
+            System.out.println("You are out of lives!");
+            
+            score.players.add(player);
+            score.save();
+        }
+        
+        sc.close();
     }
 }
