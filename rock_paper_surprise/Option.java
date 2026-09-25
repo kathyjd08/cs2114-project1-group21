@@ -70,6 +70,10 @@ public class Option
         {
             return 0;
         }
+        else if(this.name.equals("surprise"))
+        {
+            return 1;
+        }
         else if (this.name.equals("save")) {
             return 2;
         }

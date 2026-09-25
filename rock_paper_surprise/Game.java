@@ -47,7 +47,7 @@ public class Game {
         else if (rand < (rockProb + paperProb + scissorsProb)) {
             return new Option("Scissors");
         }
-        else{
+        else {
             return new Option("Surprise");
         }
     }
@@ -78,14 +78,14 @@ public class Game {
             System.out.println("You have " + player.getLives() + " lives");
 
             System.out.print(
-                "Enter option (choose from rock, paper, scissors, //surprises, or save): ");
+                "Enter option (choose from rock, paper, scissors, surprise, or save): ");
             String playerInput = sc.next();
             Option playerOp = new Option(playerInput);
             Option compOp = game.getResponse();
             int result = playerOp.fight(compOp);
             if (result == 1) {
                 System.out.println("You win!");
-
+                player.setScore(player.getScore() + 1);
             }
             else if (result == 0) {
 
