@@ -85,8 +85,7 @@ public class Game {
             System.out.print(
                 "Enter option (choose from rock, paper, scissors, surprise, or save): ");
             String playerInput = sc.next().toLowerCase();
-            while(possOptions.contains(playerInput) == false)
-            {
+            while (possOptions.contains(playerInput) == false) {
                 System.out.print(
                     "Enter option (choose from rock, paper, scissors, surprise, or save): ");
                 playerInput = sc.next().toLowerCase();
@@ -106,12 +105,15 @@ public class Game {
                 System.out.println("You may now close the game!");
                 score.players.add(player);
                 score.save();
+                break;
             }
             else {
                 System.out.println("You lost :(");
                 player.setLives(player.getLives() - 1);
             }
         }
-        System.out.println("You are out of lives!");
+        if (player.getLives() == 0) {
+            System.out.println("You are out of lives!");
+        }
     }
 }
