@@ -39,16 +39,16 @@ public class Game {
     public Option getResponse() {
         double rand = Math.random(); // Random double from [0, 1)
         if (rand < rockProb) {
-            return new Option("Rock");
+            return new Option("rock");
         }
         else if (rand < (rockProb + paperProb)) {
-            return new Option("Paper");
+            return new Option("paper");
         }
         else if (rand < (rockProb + paperProb + scissorsProb)) {
-            return new Option("Scissors");
+            return new Option("scissors");
         }
         else {
-            return new Option("Surprise");
+            return new Option("surprise");
         }
     }
 
