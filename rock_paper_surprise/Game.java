@@ -73,13 +73,24 @@ public class Game {
             }
         }
         Game game = new Game(player);
+        ArrayList<String> possOptions = new ArrayList<String>();
+        possOptions.add("rock");
+        possOptions.add("paper");
+        possOptions.add("scissors");
+        possOptions.add("surprise");
+        possOptions.add("save");
         while (player.getLives() > 0) {
             System.out.println("Your score is " + player.getScore());
             System.out.println("You have " + player.getLives() + " lives");
-
             System.out.print(
                 "Enter option (choose from rock, paper, scissors, surprise, or save): ");
-            String playerInput = sc.next();
+            String playerInput = sc.next().toLowerCase();
+            while(possOptions.contains(playerInput) == false)
+            {
+                System.out.print(
+                    "Enter option (choose from rock, paper, scissors, surprise, or save): ");
+                playerInput = sc.next().toLowerCase();
+            }
             Option playerOp = new Option(playerInput);
             Option compOp = game.getResponse();
             int result = playerOp.fight(compOp);
