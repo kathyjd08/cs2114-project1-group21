@@ -17,7 +17,7 @@ public class Score
     private String user;
     private int score;
     private int lives;
-    private File playerRecords = new File("playerRecords.txt");
+    public File playerRecords = new File("playerRecords.txt");
     /**
      * This method is run first to gather the player data from the text file.
      */
