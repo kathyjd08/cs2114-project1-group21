@@ -42,9 +42,13 @@ public class Game
     }
 
 
+<<<<<<< Updated upstream
     public void getScoreboard()
     {
         Score score = new Score();
+=======
+    public void getScoreboard() {
+>>>>>>> Stashed changes
         ArrayList<Player> topThree = score.getTopThree();
         for (int i = 0; i < topThree.size(); i++)
         {
@@ -66,18 +70,30 @@ public class Game
         System.out.println("Your score is " + player.getScore());
 
         System.out.print(
+<<<<<<< Updated upstream
             "Enter option (choose from rock, paper, scissors, //surprises, or save): ");
+=======
+            "Enter option (choose from rock, paper, scissors, or surprises): ");
+>>>>>>> Stashed changes
         String playerInput = sc.next();
         Option playerOp = new Option(playerInput);
         Option compOp = game.getResponse();
         int result = playerOp.fight(compOp);
+<<<<<<< Updated upstream
         if (result == 1)
         {
+=======
+        if (result == 1) {
+>>>>>>> Stashed changes
             System.out.println("You win!");
 
         }
+<<<<<<< Updated upstream
         else if (result == -1)
         {
+=======
+        else if (result == -1) {
+>>>>>>> Stashed changes
             System.out.println("You tied.");
         }
         else if (result == 2)
