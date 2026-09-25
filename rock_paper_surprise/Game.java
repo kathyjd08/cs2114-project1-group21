@@ -66,7 +66,7 @@ public class Game
         System.out.println("Your score is " + player.getScore());
 
         System.out.print(
-            "Enter option (choose from rock, paper, scissors, //surprises): ");
+            "Enter option (choose from rock, paper, scissors, //surprises, or save): ");
         String playerInput = sc.next();
         Option playerOp = new Option(playerInput);
         Option compOp = game.getResponse();
@@ -80,7 +80,8 @@ public class Game
         {
             System.out.println("You tied.");
         }
-        else if (result == 2) {
+        else if (result == 2)
+        {
             System.out.println("You may now close the game!");
             score.players.add(player);
             score.save();
