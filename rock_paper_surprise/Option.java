@@ -20,8 +20,6 @@ public class Option
      * 
      * @param name
      *            of option
-     * @param type
-     *            of option
      */
     public Option(String name)
     {

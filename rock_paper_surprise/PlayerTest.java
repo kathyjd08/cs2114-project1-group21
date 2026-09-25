@@ -32,6 +32,42 @@ public class PlayerTest
     }
     //~Public  Methods ........................................................
     /**
+     * tests invalid username
+     */
+    @Test
+    public void testUsernameWithComma()
+    {
+        assertThrows(IllegalArgumentException.class,
+        () -> new Player("claire,smith"));
+    }
+    /**
+     * tests null usernames
+     */
+    @Test
+    public void testNullUsername()
+    {
+        assertThrows(IllegalArgumentException.class,
+        () -> new Player(null));
+    }
+    /**
+     * tests empty usernames
+     */
+    @Test
+    public void testEmptyUsername()
+    {
+        assertThrows(IllegalArgumentException.class,
+        () -> new Player(""));
+    }
+    /**
+     * tests white space usernames
+     */
+    @Test
+    public void testWhitespaceUsername()
+    {
+        assertThrows(IllegalArgumentException.class,
+        () -> new Player(" "));
+    }
+    /**
      * tests getUsername method
      */
     @Test

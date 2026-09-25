@@ -27,6 +27,13 @@ public class Player
      */
     public Player(String username)
     {
+        if (username == null
+            || username.trim().isEmpty()
+            || username.contains(","))
+        {
+            throw new IllegalArgumentException(
+            "Invalid username.");
+        }
         Score s = new Score();
         ArrayList<Player> players = s.players;
         this.username = username;
