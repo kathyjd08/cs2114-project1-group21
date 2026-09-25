@@ -58,19 +58,19 @@ public class Option
         {
             return 1;
         }
-        else if (name.equals("paper") && pc.getName().equals("rock"))
+        else if (this.name.equals("paper") && pc.getName().equals("rock"))
         {
             return 1;
         }
-        else if (name.equals("scissors") && pc.getName().equals("paper"))
+        else if (this.name.equals("scissors") && pc.getName().equals("paper"))
         {
             return 1;
         }
-        else if (name.equals(pc.getName()))
+        else if (this.name.equals(pc.getName()))
         {
             return 0;
         }
-        else if (name.equals("save")) {
+        else if (this.name.equals("save")) {
             return 2;
         }
         else
