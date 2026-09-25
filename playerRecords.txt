@@ -1,2 +1,6 @@
 chris,3,0
+<<<<<<< Updated upstream
 anna,2,0
+=======
+chris,3,0
+>>>>>>> Stashed changes
