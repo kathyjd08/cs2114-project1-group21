@@ -16,7 +16,8 @@ public class GameTest {
 
     private Player mockPlayer;
     private Game game;
-
+    
+    @Before
     public void setUp() {
         // Creating a valid player instance for the game constructor
         mockPlayer = new Player("TestUser");
